@@ -13,7 +13,7 @@ function moviesApi(app) {
     const { tags } = req.query;
     try {
       const movies = await moviesService.getMovies({ tags });
-      // const movies = await Promise.resolve(moviesMock);
+      // throw new Error('Error getting movies'); <= este error para probar middleware
       res.status(200).json({
         data: movies,
         message: 'movies listed'
