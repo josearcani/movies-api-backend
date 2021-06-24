@@ -32,9 +32,9 @@ function wrapErrors(err, req, res, next) {
 // es nuestar API lo mejor es JSON
 // express determina un middleware cuando tiene 4 parámetros
 function errorHandler(err, req, res, next) {
-  const { output: { statusCode, payload} } = err;
+  const { output: { statusCode, payload } } = err;
   // determinar el estado del error si lo tiene  o un error de servidor 500
-  res.status(statusCode || 500);
+  res.status(statusCode);
   res.json(withErrorStack(payload, err.stack));
 }
 
