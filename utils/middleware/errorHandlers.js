@@ -13,6 +13,7 @@ function withErrorStack(error, stack) {
 }
 
 function logErrors(err, req, res, next) {
+  // eslint-disable-next-line no-console
   console.log(err);
   next(err);
 }
@@ -31,6 +32,7 @@ function wrapErrors(err, req, res, next) {
 // por defecto express imprime los errores es en HTML
 // es nuestar API lo mejor es JSON
 // express determina un middleware cuando tiene 4 parámetros
+// eslint-disable-next-line no-unused-vars
 function errorHandler(err, req, res, next) {
   const { output: { statusCode, payload } } = err;
   // determinar el estado del error si lo tiene  o un error de servidor 500
