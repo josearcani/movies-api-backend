@@ -19,7 +19,7 @@ passport.use(new BasicStrategy(async function (email, passport, cb) {
       return cb(boom.unauthorized(), false)
     }
 
-    delete user.passport;
+    delete user.password;
 
     return cb(null, user)
   } catch (err) {
